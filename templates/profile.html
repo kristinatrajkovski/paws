@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style>
+.split {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 100px;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+}
+
+/* Control the left side */
+.left {
+    width: 30%;
+  left: 0;
+  background-color: rgba(255, 224, 138, 0.568);
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Control the right side */
+.right {
+    width: 70%;
+  right: 0;
+  background-color: rgb(190, 121, 121);
+
+}
+.box {
+    width: 900px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+
+
+</style>
+
+<div class="split left">
+    <div class="centered content is-medium">
+      <h1>{{person['Name']}}</h1> <br><br>
+      <p>Email <p>
+      <form>
+        <textarea class="textarea" placeholder='{{person["Email"]}}' rows=1></textarea>
+      </form><br>
+      <p>Location<p>
+        <form>
+          <textarea class="textarea" placeholder='{{person["Location"]}}' rows=1></textarea>
+        </form></p>
+        <p>Phone Number<p>
+            <form>
+              <textarea class="textarea" placeholder='{{person["PhoneNumber"]}}' rows=1></textarea>
+            </form>
+            <br>
+            <div>
+                <a class="button is-danger">
+                  Submit Changes
+                </a>
+              </div>
+    </div>
+  </div>
+  <div class="split right">
+    <div class="centered content is-medium">
+        <h1>Missing Dogs</h1>
+        {%for dog in person['Missing'] %}
+        <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src= "{{url_for('static', filename = dog['Picture'])}}">
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <br>
+                    {{dog['Name']}}, {{dog['Breed']}}, {{dog['Age']}} years old, last seen at {{dog['Location']}}, <br>{{dog['DateTime']}}
+                    </p>
+                </div>
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-heart"></i>
+                            </span>
+                            <span>15</span>
+                          </span>
+                    </a>
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-comment"></i>
+                            </span>
+                            <span>2</span>
+                          </span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+          <h1>Found Dogs</h1>
+          {%for dog in person['Found'] %}
+        <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src= "{{url_for('static', filename = dog['Picture'])}}">
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <br>
+                    {{dog['Breed']}}, approximately {{dog['Age']}} years old, found at {{dog['Location']}}, <br>{{dog['DateTime']}}
+                    </p>
+                </div>
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-heart"></i>
+                            </span>
+                            <span>15</span>
+                          </span>
+                    </a>
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-comment"></i>
+                            </span>
+                            <span>2</span>
+                          </span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+            <h1>Dogs put up for adoption</h1>
+            {%for dog in person['Adoption'] %}
+        <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src= "{{url_for('static', filename = dog['Picture'])}}">
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <br>
+                    {{dog['Name']}}, {{dog['Breed']}}, {{dog['Age']}} years old, currently at {{dog['Location']}}
+                    </p>
+                </div>
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-heart"></i>
+                            </span>
+                            <span>15</span>
+                          </span>
+                    </a>
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-comment"></i>
+                            </span>
+                            <span>2</span>
+                          </span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'map.html' %}
+
+{% block leftside %}
+<a href="{{url_for('missing')}}">
+<button type="button" class="blueblock">
+    <span>Search for missing dog</span> <br><br>
+    <span class="icon">
+        <i class="fa fa-search"></i>
+    </span>
+  </button>
+<br><br>
+</a>
+<div class="dropdown">
+    <div class="dropdown-trigger">
+      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+        <span>Breed</span>
+        <span class="icon is-small">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+      <div class="dropdown-content">
+        <a href="#" class="dropdown-item">
+          Alaskan Malamute
+        </a>
+        <a href="#" class="dropdown-item">
+          Goldendoodle
+        </a>
+        <a href="#" class="dropdown-item">
+          Labrador
+        </a>
+        <a href="#" class="dropdown-item">
+          Golden Retriever
+        </a>
+        <a href="#" class="dropdown-item">
+          Chiwawa
+        </a>
+        <a href="#" class="dropdown-item">
+          Poodle
+        </a>
+        <a href="#" class="dropdown-item">
+          Yorki
+        </a>
+        <hr class="dropdown-divider">
+        <a href="#" class="dropdown-item">
+          German Sepherd
+        </a>
+      </div>
+    </div>
+  </div>
+  <form>
+    <textarea class="textarea" placeholder="Age" rows="1"></textarea>
+  </form>
+  <form>
+    <textarea class="textarea" placeholder="Name" rows="1"></textarea>
+  </form>
+  <form>
+    <textarea class="textarea" placeholder="Location (Last Seen)" rows="1"></textarea>
+  </form>
+  <form>
+    <textarea class="textarea" placeholder="Time (Last Seen)" rows="1"></textarea>
+  </form>
+  <form>
+    <textarea class="textarea" placeholder="Contact Info" rows="1"></textarea>
+  </form>
+  <div>
+    <div class="file">
+      <label class="file-label">
+        <input class="file-input" type="file" name="resume">
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-upload"></i>
+          </span>
+          <span class="file-label">
+            Upload Photo
+          </span>
+        </span>
+      </label>
+    </div><br><br>
+      <a class="button is-danger">
+        Report Missing Dog
+      </a>
+    </div>
+      {% endblock %}

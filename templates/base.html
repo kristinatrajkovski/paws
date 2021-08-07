@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PAWS - {{title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
+  </head>
+  <body>
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a href="{{url_for('home')}}">
+            <img src= "{{url_for('static', filename = 'pawslogo2.png')}}" height="200px" width="150px" padding-left="20px">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <a href="{{url_for('home')}}">
+              <button class="button is-outlined">
+                <span class="icon-text">
+                  <span class="icon">
+                    <i class="fas fa-home"></i>
+                  </span>
+                  <span>Home</span>
+                </span>
+              </button> </a>&nbsp &nbsp
+              <a href="{{url_for('profile', user_id='1')}}">
+              <button class="button is-outlined">
+                <span class="icon">
+                  <i class="far fa-user-circle"></i>
+                </span>
+                <span>Profile</span>
+              </span>
+              </button> </a>&nbsp &nbsp
+              <div class="buttons">
+                <a class="button is-danger">
+                  Log Out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+  <section class="section" padding="0px">
+    <div class="container">
+      <h1 class="title">
+    </h1>
+
+    {% block content %}
+   
+    {% endblock %}
+</div>
+</section>
+
+  </body>
+</html>
