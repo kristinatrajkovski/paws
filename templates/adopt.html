@@ -2,12 +2,48 @@
 
 {% block leftside %}
 <button type="button" class="purpleblock">
-    <span>Adopt a Dog</span> <br><br>
+    <span>Adopt/Purchase a Pet</span> <br><br>
     <span class="icon">
         <i class="fas fa-home"></i>
     </span>
   </button>
 <br><br>
+<div class="dropdown">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+      <span>Animal</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+    <div class="dropdown-content">
+      <a href="#" class="dropdown-item">
+        Cat
+      </a>
+      <a href="#" class="dropdown-item">
+        Dog
+      </a>
+      <a href="#" class="dropdown-item">
+        Fish
+      </a>
+      <a href="#" class="dropdown-item">
+        Lizard
+      </a>
+      <a href="#" class="dropdown-item">
+        Spider
+      </a>
+      <a href="#" class="dropdown-item">
+        Guinea Pigs
+      </a>
+      <hr class="dropdown-divider">
+      <a href="#" class="dropdown-item">
+        Pigs
+      </a>
+    </div>
+  </div>
+</div>
 <div class="dropdown">
     <div class="dropdown-trigger">
       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
