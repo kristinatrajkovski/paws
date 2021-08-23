@@ -1,6 +1,64 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      .navbar-item input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-right: 16px;
+  font-size: 17px;
+}
+      .newblock {
+  height: 92%;
+  width: 100%;
+  position: fixed;
+  overflow-x: hidden;
+}
+      .navbar1 {
+  height: 8%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.navbar1 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar1 a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.box1 {
+      display: block;
+      padding-top: 10px;
+  width:  379.7px;
+  height: 57.725px;
+  border: none;
+  font-size: 24px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  text-align: center;
+    }
+.bblue {
+  background-color: cornflowerblue;
+}
+.bpurple {
+  
+  background-color: rgb(152, 100, 237);
+}
+.bpink {
+  background-color: rgb(226, 124, 175);
+}
+.bgreen {
+  background-color: rgb(119, 238, 103);
+}
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PAWS - {{title}}</title>
@@ -29,6 +87,7 @@
       
           <div class="navbar-end">
             <div class="navbar-item">
+              <i class="fa fa-search"></i>&nbsp;<input type="text" placeholder="Search...">
               <a href="{{url_for('home')}}">
               <button class="button is-outlined">
                 <span class="icon-text">
@@ -55,16 +114,54 @@
           </div>
         </div>
       </nav>
-  <section class="section" padding="0px">
-    <div class="container">
+    <div class="container split">
       <h1 class="title">
     </h1>
-
+    <div class="newblock">
     {% block content %}
    
     {% endblock %}
+    </div>
 </div>
-</section>
-
+<nav>
+  <div class="navbar1">
+    <a href="{{url_for('missing')}}">
+          <div class="box1 bblue">
+                <span>Search for Missing Animal</span>
+                <span class="icon">
+                    <i class="fa fa-search"></i>
+                </span>
+              </div>
+            </a>
+    <a href="{{url_for('found')}}">
+          <div class="box1 bgreen">
+                <span>Report a Found Animal</span>
+                <span class="icon">
+                  <i class="fa fa-address-book"></i>
+                </span>
+              </div>
+            </a>
+    <a href="{{url_for('adoption')}}">
+          <div class="box1 bpink">
+                <span>Put Animal Up for Adoption</span>
+                <span class="icon">
+                  <i class="fas fa-hand-holding-heart"></i>
+                </span>
+              </div>
+            </a>
+      <a href="{{url_for('adopt')}}">
+          <div class="box1 bpurple">
+                <span>Adopt/Purchase a Pet</span>
+                <span class="icon">
+                  <i class="fas fa-home"></i>
+                </span>
+              </div>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+  </nav>
   </body>
 </html>
