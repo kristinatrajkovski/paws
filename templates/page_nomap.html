@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
+<!-- includes everything except the map and left split -->
 
-
-{% block content %}
 <style>
 .split {
   height: 92%;
@@ -14,26 +13,6 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: black;
   display: inline-block;
-}
-
-/* Control the left side */
-.left {
-    width: 30%;
-    height: 92%;
-  left: 0;
-  background-color: rgba(128, 128, 128, 0.514);
-  color: black;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-}
-
-/* Control the right side */
-.right {
-    width: 70%;
-  right: 0;
-  background-color: hsl(348, 86%, 61%);
-
 }
 .box {
     width: 900px;
@@ -109,23 +88,21 @@
   
   
 }
-
-
+.redblock {
+  display: block;
+  width:  150px;
+  height: 100px;
+  border: none;
+  margin: 28px 28px;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: rgb(163, 0, 0);
+}
 </style>
-
-<div class="split left">
-    <div class="center content is-normal">
-      {% block leftside %}
-
-      {% endblock %}
-
-   </div>
-</div>
-  <div class="split right">
-    <div class="centered content is-medium">
-      <img src= "{{url_for('static', filename = 'map.png')}}">
-          
-    </div>
-  </div>
+{% block content %}
 
 {% endblock %}
