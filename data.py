@@ -61,3 +61,5 @@ users={
     "1": kristinatrajkovski,
     "2": johndoe
 }
+#am going to put the messages to format with this
+#its hardwired with now, but that'll change when I finish putfora.html

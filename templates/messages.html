@@ -5,7 +5,7 @@
 
 
 <div class>
-    <button type="button" class="redblock">
+    <button type="button" class="redblock"> <!-- This is the Red box that says messages-->
         <span>Messages</span> <br><br>
         <span class="icon">
             <i class="fas fa-sms"></i>
@@ -13,30 +13,33 @@
     </button>
 </div>
 
-<div class="box">
-    <article class="media">
-        <div class="media-left">
-            <figure class="image is-64x64">
-                <img src="{{url_for('static', filename='cool.png')}}" alt="Image">
-            </figure>
-        </div>
-        <div class="media-content">
-            <div class="content">
-                <p>
-                    <strong>Landon Campbell</strong>
-                </p>
-            </div>
-            <div class="message_content">
-                <p>
-                    Hello, I'd  like to purchase your animal!
-                </p>
-                <br></br>
-                <div class="buttons">
-                    <button class="button is-danger is-light">Reply</button>
+<div class="columns"></div> <!-- This is the messages box that shows my name-->
+    <div class="column is-three-quarters">
+        <div class="box">
+            <article class="media">
+                <div class="media-left">
+                    <figure class="image is-64x64">
+                        <img src="{{url_for('static', filename='cool.png')}}" alt="Image">
+                    </figure>
                 </div>
-            </div>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>Landon Campbell</strong>
+                        </p>
+                    </div>
+                    <div class="message_content">
+                        <p>
+                            Hello, I'd  like to purchase your animal!
+                        </p>
+                        <br></br>
+                        <div class="buttons"> <!-- reply button-->
+                            <button class="button is-danger is-light">Reply</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
-    </article>
+    </div>
 </div>
-
 {% endblock %}
