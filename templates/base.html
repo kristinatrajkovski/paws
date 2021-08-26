@@ -20,7 +20,7 @@
   overflow: hidden;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 250vh;
 }
 .navbar1 a {
   float: left;
@@ -164,7 +164,12 @@
     </div>
 </div>
 <nav>
-  <div class="navbar1">
+  <div class="navbar1" style="background-color: rgb(221, 216, 216);">
+    <div id="navbarLowerMenu" class="navbar-menu">
+      <div class="navbar1">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
     <a href="{{url_for('missing')}}">
           <div class="box1 bblue">
                 <span>Search for Missing Animal</span>
@@ -197,12 +202,16 @@
                 </span>
                 
               </div>
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            </a>
+            </div>
+            <div>
+              <a role="button" class="navbar-burger" aria-label="lmenu" aria-expanded="false" data-target="navbarLowerMenu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
               </a>
-            </a>
+            </div>
+</div>
   </nav>
   </body>
 </html>

@@ -7,91 +7,39 @@
         <i class="fas fa-home"></i>
     </span>
   </button>
-<br><br> <!-- Just so you know, there's a much easier format to make a dropdown with bulma, see in putfora.html-->
-<div class="dropdown">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-      <span>Animal</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-    <div class="dropdown-content">
-      <a href="#" class="dropdown-item">
-        Cat
-      </a>
-      <a href="#" class="dropdown-item">
-        Dog
-      </a>
-      <a href="#" class="dropdown-item">
-        Fish
-      </a>
-      <a href="#" class="dropdown-item">
-        Lizard
-      </a>
-      <a href="#" class="dropdown-item">
-        Spider
-      </a>
-      <a href="#" class="dropdown-item">
-        Guinea Pigs
-      </a>
-      <hr class="dropdown-divider">
-      <a href="#" class="dropdown-item">
-        Pigs
-      </a>
-    </div>
-  </div>
+<br><br> 
+<div class="select"> 
+  <select>
+    <option>Select an Animal Species</option>
+    <option>Cat</option>
+    <option>Dog</option>
+    <option>Fish</option>
+    <option>Guinea Pig</option>
+    <option>Pig</option>
+    <option>Tortoise</option>
+    <option>Raccoon</option>
+    <option>Fox</option>
+    <option>Bird</option>
+    <option>Rabbit</option>
+    <option>Horse</option>
+    <option>Ferret</option>
+    <option>Rat</option>
+    <option>Goat</option>
+    <option>Hedgehog</option>
+    <option>Hamster</option>
+    <option>Gerbils</option>
+    <option>Reptile</option>
+  </select>
 </div>
-<div class="dropdown">
-    <div class="dropdown-trigger">
-      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-        <span>Breed</span>
-        <span class="icon is-small">
-          <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-      <div class="dropdown-content">
-        <a href="#" class="dropdown-item">
-          Alaskan Malamute
-        </a>
-        <a href="#" class="dropdown-item">
-          Goldendoodle
-        </a>
-        <a href="#" class="dropdown-item">
-          Labrador
-        </a>
-        <a href="#" class="dropdown-item">
-          Golden Retriever
-        </a>
-        <a href="#" class="dropdown-item">
-          Chiwawa
-        </a>
-        <a href="#" class="dropdown-item">
-          Poodle
-        </a>
-        <a href="#" class="dropdown-item">
-          Yorki
-        </a>
-        <hr class="dropdown-divider">
-        <a href="#" class="dropdown-item">
-          German Sepherd
-        </a>
-      </div>
-    </div>
-  </div>
   <form>
-    <textarea class="textarea" placeholder="Age" rows="1"></textarea>
+    <textarea class="textarea" placeholder="Breed" rows="1"></textarea>
+    <textarea class="textarea" placeholder="Age in years" rows="1"></textarea>
     <textarea class="textarea" placeholder="Location" rows="1"></textarea>
     <textarea class="textarea" placeholder="Contact Info" rows="1"></textarea>
   </form>
-  <div>
-    <br><br>
+  <div><br><br>
       <a class="button is-danger">
-        Save
+        Search
       </a>
     </div>
       {% endblock %}

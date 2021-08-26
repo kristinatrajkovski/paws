@@ -23,8 +23,8 @@ def missing():
 def found():
     return render_template('found.html', title= "Report a Found Animal")
 
-@app.route("/putfora") #the fact that this is adoption and the 
-def putfora():         #one below is adopt, could be confusing in the future
+@app.route("/putfora")  
+def putfora():         
     return render_template('putfora.html', title= "Put Animal Up for Adoption")
 
 @app.route("/adopt")
