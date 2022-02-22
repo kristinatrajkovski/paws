@@ -1,34 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<style>
-  .bcontainer {
-    padding-bottom: 15vh;
-    height: 92%;
-  position: fixed;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 100px;
-  font-size: 18px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: black;
-  display: inline-block;
-  background-color: rgb(221, 216, 216);
-  }
-  
-  
-.pos {
-    width: 100%;
-    height: 92%;
-  left: 0;
-  background-color: rgb(221, 216, 216);
-  color: black;
-  padding-left: 20vh;
-}
 
-</style>
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'putfora.css')}}">
+</head>
+
 <div class="bcontainer pos">
-<button type="button" class="pinkblock">
+<button type="button" class="putfora-box">
     <span>Put Animal Up for Adoption</span> <br><br>
     <span class="icon">
         <i class="fas fa-hand-holding-heart"></i>
@@ -104,7 +83,7 @@
           </span>
         </label>
       </div><br><br>
-      <a class="button is-danger">
+      <a class="button adopt-box">
         Save
       </a>
     </div>
