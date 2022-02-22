@@ -1,0 +1,10 @@
+
+.logout {
+    width: 100%;
+}
+
+.logout-message {
+    font-size: 5em;
+    align-items: center;
+    text-align: center;
+}

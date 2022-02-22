@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetForo | {{title}}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/dccaa85f77.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'logout.css')}}">
+  <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+          <img src="{{url_for('static', filename = 'PetForoCornerLogo.png')}}" padding-left="20px" style="max-height:700px; max-width:160px;">
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        
+      </div>
+  
+      <div class="navbar-end">
+
+        <div class="navbar-item">
+         
+        </div>
+
+        <div class="navbar-item">
+          <div class="buttons">
+
+            <a class="button has-text-white" href="{{url_for('home')}}" style="background-color:rgb(177, 19, 19);">
+              Log in
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+    <div class="logout columns">
+        <h1 class="logout-message column">
+            You Have Been Logged Out!
+        </h1>
+    </div>
+
+</body>
+</html>
+
+
+<div>
+
+</div>
