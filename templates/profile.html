@@ -2,45 +2,10 @@
 
 
 {% block content %}
-<style>
-.split {
-  height: 92%;
-  position: fixed;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 100px;
-  text-align: center;
-  font-size: 24px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: black;
-}
 
-/* Control the left side */
-.left {
-    width: 30%;
-  height: 92%;
-  left: 0;
-  background-color: rgb(221, 216, 216);
-  color: black;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Control the right side */
-.right {
-    width: 70%;
-  right: 0;
-  background-color: rgb(190, 121, 121);
-
-}
-.box {
-    width: 80%;
-    margin-left: 100px;
-    margin-bottom: 20px;
-}
-
-
-</style>
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'profile.css')}}">
+</head>
 
 <div class="split left">
     <div class="centered content is-medium">

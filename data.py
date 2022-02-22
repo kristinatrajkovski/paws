@@ -1,5 +1,7 @@
 from datetime import datetime
 
+from flask import url_for
+
 missing1 = {
     "Age":"2",
     "Breed":"Alaskan Malamute",
@@ -37,7 +39,7 @@ adoption1 = {
     "Picture": "freddie.jpg"
 }
 
-kristinatrajkovski= {
+kristinatrajkovski = {
     "Name": "Kristina Trajkovski",
     "Username": "kristina8822",
     "Email": "trajkovskikristina@gmail.com",
@@ -47,7 +49,7 @@ kristinatrajkovski= {
     "Found":[],
     "Adoption":[adoption1]
 }
-johndoe= {
+johndoe = {
     "Name": "John Doe",
     "Username": "johndoe",
     "Email": "johndoe@gmail.com",
@@ -57,9 +59,41 @@ johndoe= {
     "Found":[found1],
     "Adoption":[]
 }
-users={
-    "1": kristinatrajkovski,
-    "2": johndoe
+landoncampbell = {
+    "Name": "Landon Campbell",
+    "User": "RedFox",
+    "Email": "redfoxmma@gmail.com",
 }
-#am going to put the messages to format with this
-#its hardwired with now, but that'll change when I finish putfora.html
+
+users = {
+    "1": kristinatrajkovski,
+    "2": johndoe,
+    "3": landoncampbell
+}
+
+alaskan_husky1 = {
+    "Name": "Chocolate",
+}
+golden_retriever1 = {
+    "Name": "Buddy",
+}
+
+missing_pets = {
+    "Alaskan Husky": alaskan_husky1,
+    "Golden Retriever": golden_retriever1
+}
+
+
+found_pets = {
+
+}
+
+adoptable_pets = {
+
+}
+
+messages = {
+    "Text": "Hello, I'd like to purchase your animal!",
+    "Sender": users["3"],
+    "Recipient": users["1"]
+}

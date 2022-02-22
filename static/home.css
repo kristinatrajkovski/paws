@@ -1,8 +1,9 @@
 .img {
     height: 50px;
     width: 50px;
-  }
-  .split {
+}
+
+.split {
   height: 92%;
   position: fixed;
   top: 0;
@@ -14,7 +15,7 @@
   color: black;
 }
 
-  .frame{
+.frame {
   display: inline-block;
   padding-top: 10px;
   width:  200px;
@@ -26,4 +27,5 @@
   cursor: pointer;
   margin: 5px;
   text-align: center; 
-  position: relative;}
+  position: relative;
+}
