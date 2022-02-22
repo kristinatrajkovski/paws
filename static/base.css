@@ -28,13 +28,13 @@
 }
 
 .adopt-box {
- background-color: black;
- color: white;
+  background-color: darkred;
+  color: white
 }
 
 .messages-box {
-  background-color: darkred;
-  color: white
+  background-color: black;
+  color: white;
 }
 
 
