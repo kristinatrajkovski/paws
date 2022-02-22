@@ -3,9 +3,6 @@ from data import users
 
 app = Flask(__name__)
 
-""" I removed the 'title=title' on the render_templates because they 
-served no purpose """
-
 @app.route("/")
 def home():
     return render_template('home.html', title= "Home")
@@ -13,7 +10,7 @@ def home():
 @app.route("/profile/<string:user_id>")
 def profile(user_id):
     person=users[user_id]
-    return render_template('profile.html', person=person, title=person['Name'])
+    return render_template('profile.html', person=person, title=person['Name'], user_id=user_id)
 
 @app.route("/missing")
 def missing():

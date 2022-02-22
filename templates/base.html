@@ -1,217 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      .navbar-item input[type=text] {
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-right: 16px;
-  font-size: 17px;
-}
-      .newblock {
-  height: 92%;
-  width: 100%;
-  position: fixed;
-  overflow-x: hidden;
-}
-      .navbar1 {
-  height: 8%;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  width: 250vh;
-}
-.navbar1 a {
-  float: left;
-  display: block;
-  color: #d1d1d1;
-  text-align: center;
-  text-decoration: none;
-  font-size: 17px;
-}
-.navbar1 a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-.box1 {
-  height:100vh;
-  width: 52vh;
-      display: block;
-      padding-top: 10px;
-  border: none;
-  font-size: 24px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  cursor: pointer;
-  text-align: center;
-  position: relative;
-    }
-.bblue {
-  background-color: cornflowerblue;
-}
-.bpurple {
-  background-color: rgb(152, 100, 237);
-}
-.bpink {
-  background-color: rgb(226, 124, 175);
-}
-.bgreen {
-  background-color: rgb(119, 238, 103);
-}
-.bred {
-  background-color: rgb(163, 0, 0);
-}
-.redblock { /* I moved these from map to base.html so that I didn't need the map for the title boxes */
-  display: block;
-  width:  150px;
-  height: 100px;
-  border: none;
-  margin: 14px 28px;
-  font-size: 18px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  cursor: pointer;
-  text-align: center;
-  display: inline-block;
-  border-radius: 10px;
-  background-color: rgb(163, 0, 0);
-}
-.pinkblock {
-  display: block;
-  width:  150px;
-  height: 100px;
-  border: none;
-  margin: 28px 28px;
-  font-size: 18px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  cursor: pointer;
-  text-align: center;
-  display: inline-block;
-  border-radius: 10px;
-  background-color: rgb(226, 124, 175);
-}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetForo | {{title}}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/dccaa85f77.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'base.css')}}">
+  <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
+</head>
 
-    </style>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PetForo - {{title}}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
-  </head>
-  <body>
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a href="{{url_for('home')}}">
-            <img src= "{{url_for('static', filename = 'PetForoCornerLogo.png')}}" height="300px" width="180px" padding-left="20px">
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <div class="navbar-item has-dropdown is-hoverable">
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <i class="fa fa-search"></i>&nbsp;<input type="text" placeholder="Search...">
-              <a href="{{url_for('messages')}}">
-                      <span class="icon-text">
-                      <span class="icon">
-                        <i class="fas fa-sms" style="font-size: 36px; color: crimson;"></i>
-                      </span>
-                    </span>
-                  </a>
-                  &nbsp; &nbsp;&nbsp;
-              <a href="{{url_for('home')}}">
-              <button class="button is-outlined">
-                <span class="icon-text">
-                  <span class="icon">
-                    <i class="fas fa-home"></i>
-                  </span>
-                  <span>Home</span>
-                </span>
-              </button> </a>&nbsp &nbsp
-              <a href="{{url_for('profile', user_id='1')}}">
-              <button class="button is-outlined">
-                <span class="icon">
-                  <i class="far fa-user-circle"></i>
-                </span>
-                <span>Profile</span>
+<body>
+  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{url_for('home')}}">
+          <img src="{{url_for('static', filename = 'PetForoCornerLogo.png')}}" padding-left="20px" style="max-height:700px; max-width:160px;">
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        
+      </div>
+  
+      <div class="navbar-end">
+
+        <div class="navbar-item">
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="email" placeholder="Search...">
+              <span class="icon is-small is-left">
+                <i class="fa-solid fa-magnifying-glass"></i>
               </span>
-              </button> </a>&nbsp &nbsp
-              <div class="buttons">
-                <a class="button is-danger">
-                  Log Out
-                </a>
-              </div>
-            </div>
+            </p>
           </div>
         </div>
-      </nav>
-    <div class="container split">
-      <h1 class="title">
+
+        <div class="navbar-item">
+          <div class="buttons">
+
+            <a class="button is-white" href="{{url_for('home')}}">
+              <i class="fas fa-home" style="padding-right:5px;"></i>
+              Home
+            </a>
+
+            <a class="button is-light" href="{{url_for('profile', user_id='1')}}">
+              <i class="fa-solid fa-circle-user" style="padding-right:5px;"></i>
+              Profile
+            </a>
+
+            <a class="button has-text-white" style="background-color:rgb(177, 19, 19);">
+              Log in
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="columns is-mobile is-multiline is-centered nav-is-bottom buttons are-medium">
+      <div class="column is-narrow">
+        <a class="button missing-box" href="{{url_for('missing')}}">Report a Missing Pet
+          <i class="fa fa-search" style="padding-left:8px;"></i>
+        </a>
+      </div>
+
+      <div class="column is-narrow">
+        <a class="button found-box" href="{{url_for('found')}}">Report a Found Pet
+          <i class="fa fa-address-book" style="padding-left:8px;"></i>
+        </a>
+      </div>
+
+      <div class="column is-narrow">
+        <a class="button putfora-box" href="{{url_for('putfora')}}">Put a Pet Up for Adoption
+          <i class="fas fa-hand-holding-heart" style="padding-left:8px;"></i>
+        </a>
+      </div>
+
+      <div class="column is-narrow">
+          <a class="button adopt-box" href="{{url_for('adopt')}}">Adopt a Pet
+            <i class="fas fa-home" style="padding-left:8px;"></i>
+          </a>
+      </div>
+
+      <div class="column is-narrow">
+          <a class="button messages-box" href="{{url_for('messages')}}">Messages
+            <i class="fas fa-sms" style="padding-left:8px;"></i>
+          </a>
+      </div>
+
+  </div>
+
+  <div class="container split">
+    <h1 class="title">
     </h1>
     <div class="newblock">
-    {% block content %}
-   
-    {% endblock %}
+      {% block content %}
+
+      {% endblock %}
     </div>
-</div>
-<nav>
-  <div class="navbar1" style="background-color: rgb(221, 216, 216);">
-    <div id="navbarLowerMenu" class="navbar-menu">
-      <div class="navbar1">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
-    <a href="{{url_for('missing')}}">
-          <div class="box1 bblue">
-                <span>Search for Missing Animal</span>
-                <span class="icon">
-                    <i class="fa fa-search"></i>
-                </span>
-              </div>
-            </a>
-    <a href="{{url_for('found')}}">
-          <div class="box1 bgreen">
-                <span>Report a Found Animal</span>
-                <span class="icon">
-                  <i class="fa fa-address-book"></i>
-                </span>
-              </div>
-            </a>
-    <a href="{{url_for('putfora')}}">
-          <div class="box1 bpink">
-                <span>Put Animal Up for Adoption</span>
-                <span class="icon">
-                  <i class="fas fa-hand-holding-heart"></i>
-                </span>
-              </div>
-            </a>
-      <a href="{{url_for('adopt')}}">
-          <div class="box1 bpurple">
-                <span>Adopt/Purchase a Pet</span>
-                <span class="icon">
-                  <i class="fas fa-home"></i>
-                </span>
-                
-              </div>
-            </a>
-            </div>
-            <div>
-              <a role="button" class="navbar-burger" aria-label="lmenu" aria-expanded="false" data-target="navbarLowerMenu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-</div>
-  </nav>
-  </body>
+  </div>
+</body>
 </html>
