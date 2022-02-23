@@ -1,5 +1,5 @@
 from operator import ge
-from flask import Flask, redirect, render_template, url_for
+from flask import Flask, abort, redirect, render_template, url_for
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 import data
@@ -56,4 +56,4 @@ def messages():
 
 @app.route("/logout")
 def logout():
-    return render_template('logout.html', title="Messages")
+    return render_template('logout.html', title="Messages"), 401
