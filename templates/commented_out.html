@@ -1,0 +1,124 @@
+<!-- <div class="split right">
+    <div class="centered content is-medium">
+        <h1>Missing Dogs</h1>
+        
+        <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src= "{{url_for('static', filename = dog['Picture'])}}">
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <br>
+                    {{dog['Name']}}, {{dog['Breed']}}, {{dog['Age']}} years old, last seen at {{dog['Location']}}, <br>{{dog['DateTime']}}
+                    </p>
+                </div>
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-heart"></i>
+                            </span>
+                            <span>15</span>
+                          </span>
+                    </a>
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-comment"></i>
+                            </span>
+                            <span>2</span>
+                          </span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+          
+          <h1>Found Dogs</h1>
+          {%for dog in person['Found'] %}
+        <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src= "{{url_for('static', filename = dog['Picture'])}}">
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <br>
+                    {{dog['Breed']}}, approximately {{dog['Age']}} years old, found at {{dog['Location']}}, <br>{{dog['DateTime']}}
+                    </p>
+                </div>
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-heart"></i>
+                            </span>
+                            <span>15</span>
+                          </span>
+                    </a>
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-comment"></i>
+                            </span>
+                            <span>2</span>
+                          </span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+            <h1>Dogs put up for adoption</h1>
+            {%for dog in person['Adoption'] %}
+        <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src= "{{url_for('static', filename = dog['Picture'])}}">
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <br>
+                    {{dog['Name']}}, {{dog['Breed']}}, {{dog['Age']}} years old, currently at {{dog['Location']}}
+                    </p>
+                </div>
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-heart"></i>
+                            </span>
+                            <span>15</span>
+                          </span>
+                    </a>
+                    <a class="level-item" aria-label="like">
+                        <span class="icon-text">
+                            <span class="icon is-small">
+                              <i class="fas fa-comment"></i>
+                            </span>
+                            <span>2</span>
+                          </span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+    </div>
+  </div> -->

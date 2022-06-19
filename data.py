@@ -1,6 +1,26 @@
 from datetime import datetime
-
+import sqlite3
 from flask import url_for
+
+def query(query_text, *param):
+    conn = sqlite3.connect('Pets.db')
+    cur = conn.curser()
+    cur.executive(query_text, param)
+
+    column_names = []
+    for column in cur.description:
+        column_names.append(column[0])
+
+    rows = cur.fetchall()
+    dicts =[]
+
+    for row in rows:
+        d = dict(zip(column_names, row))
+        dicts.append(d)
+
+        conn.close()
+        return dicts
+        
 
 missing1 = {
     "Age":"2",

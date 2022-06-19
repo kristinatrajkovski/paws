@@ -1,5 +1,5 @@
 from operator import ge
-from flask import Flask, abort, redirect, render_template, url_for
+from flask import Flask, abort, redirect, render_template, url_for, request
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 import data
@@ -21,13 +21,12 @@ def verify_password(username, password):
 @app.route("/")
 @auth.login_required
 def home():
-    return render_template('home.html', title= "Home", missing_pets=data.missing_pets.values())
+    return render_template('home.html', title= "Home", missing_pets=data.missing_pets.values(), user=auth.current_user())
 
 @app.route("/profile/<string:user_id>")
 @auth.login_required
 def profile(user_id):
-    person=data.users[user_id]
-    return render_template('profile.html', person=person, title=person['Name'], user_id=user_id)
+    return render_template('profile.html', title="Profile", user=auth.current_user())
 
 @app.route("/missing")
 @auth.login_required
@@ -57,3 +56,8 @@ def messages():
 @app.route("/logout")
 def logout():
     return render_template('logout.html', title="Messages"), 401
+
+# @app.route("/report", methods = ['POST'])
+# @auth.login_required
+# def report():
+#     return request.form['']

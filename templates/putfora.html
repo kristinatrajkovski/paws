@@ -7,39 +7,41 @@
 </head>
 
 <div class="bcontainer pos">
-<button type="button" class="putfora-box">
+  <button type="button" class="putfora-box">
     <span>Put Animal Up for Adoption</span> <br><br>
     <span class="icon">
-        <i class="fas fa-hand-holding-heart"></i>
+      <i class="fas fa-hand-holding-heart"></i>
     </span>
   </button>
-<br><br>
+  <br><br>
 
-<div class="select"> <!-- is the dropdrown for animal species using bulma -->
-  <select>
-    <option>Select an Animal Species</option>
-    <option>Cat</option>
-    <option>Dog</option>
-    <option>Fish</option>
-    <option>Guinea Pig</option>
-    <option>Pig</option>
-    <option>Tortoise</option>
-    <option>Raccoon</option>
-    <option>Fox</option>
-    <option>Bird</option>
-    <option>Rabbit</option>
-    <option>Horse</option>
-    <option>Ferret</option>
-    <option>Rat</option>
-    <option>Goat</option>
-    <option>Hedgehog</option>
-    <option>Hamster</option>
-    <option>Gerbils</option>
-    <option>Reptile</option>
-  </select>
-</div>
+  <div class="select">
+    <!-- is the dropdrown for animal species using bulma -->
+    <select>
+      <option>Select an Animal Species</option>
+      <option>Cat</option>
+      <option>Dog</option>
+      <option>Fish</option>
+      <option>Guinea Pig</option>
+      <option>Pig</option>
+      <option>Tortoise</option>
+      <option>Raccoon</option>
+      <option>Fox</option>
+      <option>Bird</option>
+      <option>Rabbit</option>
+      <option>Horse</option>
+      <option>Ferret</option>
+      <option>Rat</option>
+      <option>Goat</option>
+      <option>Hedgehog</option>
+      <option>Hamster</option>
+      <option>Gerbils</option>
+      <option>Reptile</option>
+    </select>
+  </div>
 
-  <div class="columns"> <!-- text inputs for info-->
+  <div class="columns">
+    <!-- text inputs for info-->
     <div class="column is-one-third">
       <input class="input" type="text" placeholder="Breed"></input>
       <input class="input" type="text" placeholder="Age in years"></input>
@@ -47,7 +49,8 @@
     </div>
   </div>
 
-  <div class="columns"> <!-- medical history section-->
+  <div class="columns">
+    <!-- medical history section-->
     <div class="column is-one-third">
       <div>
         <p>
@@ -58,7 +61,8 @@
     </div>
   </div>
 
-  <label class="checkbox"> <!-- check boxes for more info-->
+  <label class="checkbox">
+    <!-- check boxes for more info-->
     <input type="checkbox">
     Purebred
   </label>
@@ -69,24 +73,25 @@
   </label>
   <br></br>
 
-  <div> <!-- you made this part, this is the upload picture and submit button-->
+  <div>
+    <!-- you made this part, this is the upload picture and submit button-->
     <div class="file">
-        <label class="file-label">
-          <input class="file-input" type="file" name="resume">
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
-            <span class="file-label">
-              Upload Photos
-            </span>
+      <label class="file-label">
+        <input class="file-input" type="file" name="resume">
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-upload"></i>
           </span>
-        </label>
-      </div><br><br>
-      <a class="button adopt-box">
-        Save
-      </a>
-    </div>
-
+          <span class="file-label">
+            Upload Photos
+          </span>
+        </span>
+      </label>
+    </div><br><br>
+    <a class="button adopt-box">
+      Save
+    </a>
   </div>
+
+</div>
 {% endblock %}
