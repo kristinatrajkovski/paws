@@ -3,7 +3,7 @@ from flask import Flask, abort, redirect, render_template, url_for, request
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 import data
-from flask_login import LoginManager
+# from flask_login import LoginManager
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
@@ -11,20 +11,17 @@ auth = HTTPBasicAuth()
 # login_manager = LoginManager()
 # login_manager.init_app(app)
 
-users = {
-    "Kristina": generate_password_hash("HelloWorld,01"),
-    "Landon": generate_password_hash("HelloWorld,01")
-}
-
 # @login_manager.user_loader
 # def load_user(user_id):
 #     return User.get(user_id)
 
-@auth.verify_password
+Users = data.get_users()
+
+@auth.verify_password   
 def verify_password(username, password):
-    if username in users and \
-            check_password_hash(users.get(username), password):
-        return username
+    for User in Users:
+        if username in User['Username'] and check_password_hash(eval(User['Password']), password):
+            return username 
 
 @app.route("/")
 def landing():

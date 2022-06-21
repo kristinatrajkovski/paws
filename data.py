@@ -2,6 +2,7 @@ import pyodbc
 # from secret import server, database, username, password
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime, timedelta, date
+from flask_httpauth import HTTPBasicAuth
 
 server = 'tcp:petforo.database.windows.net'
 database = 'PetForo'
@@ -39,6 +40,14 @@ def get_pets():
     
     """)
 
+def get_users():
+    return query("""
+                SELECT * FROM Users
+    """)
+# Users = {
+#     "Kristina": generate_password_hash("HelloWorld,01"),
+#     "Landon": generate_password_hash("HelloWorld,01")
+# }
 
 missing1 = {
     "Age":"2",
