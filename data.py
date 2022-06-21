@@ -1,26 +1,44 @@
-from datetime import datetime
-import sqlite3
-from flask import url_for
+import pyodbc
+# from secret import server, database, username, password
+from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime, timedelta, date
 
-def query(query_text, *param):
-    conn = sqlite3.connect('Pets.db')
-    cur = conn.curser()
-    cur.executive(query_text, param)
+server = 'tcp:petforo.database.windows.net'
+database = 'PetForo'
+username = 'appadmin'
+password = 'Hell0W0rld,#1'
 
-    column_names = []
-    for column in cur.description:
-        column_names.append(column[0])
 
-    rows = cur.fetchall()
-    dicts =[]
+def get_conn():
+    conn = pyodbc.connect('DRIVER={ODBC Driver 18 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+    return conn
 
-    for row in rows:
-        d = dict(zip(column_names, row))
-        dicts.append(d)
 
-        conn.close()
-        return dicts
+def dict_results(cursor,single_row=False):
+    columns = [column[0] for column in cursor.description]
+    results = []
+    for row in cursor:
+        d = dict(zip(columns,row))
+        results.append(d)
+    if single_row:
+        if len(results) > 0:
+            return results[0]
+        else:
+            return None
+    else:
+        return results
+
+def query(q,*args,single_row=False):
+    cursor = get_conn().cursor()
+    cursor.execute(q,*args)
+    return dict_results(cursor,single_row=single_row)
         
+def get_pets():
+    return query("""
+                SELECT * FROM Pets
+    
+    """)
+
 
 missing1 = {
     "Age":"2",

@@ -21,7 +21,8 @@ def verify_password(username, password):
 @app.route("/")
 @auth.login_required
 def home():
-    return render_template('home.html', title= "Home", missing_pets=data.missing_pets.values(), user=auth.current_user())
+    pets = data.get_pets()
+    return render_template('home.html', title= "Home", pets=pets, user=auth.current_user())
 
 @app.route("/profile/<string:user_id>")
 @auth.login_required

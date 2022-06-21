@@ -6,10 +6,10 @@
 </head>
 
 <div class="split">
-  {% for pet in missing_pets %}
+  {% for pet in pets %}
   <div class="frame missing-box">
-    <p>Missing </p><br>
-    <p>{{pet["Name"]}}</p>
+    <p>{{pet['Name']}} | {{pet['Species']}}</p>
+    <p>{{pet['Status']}}</p>
       <!-- <img src= "{{pet['Picture']}}" padding-left="20px" height="50px" width="100px"> -->
   </div>
   {% endfor %}
