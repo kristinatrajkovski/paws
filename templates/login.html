@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}">
 </head>
 
-<form class="box" action="{{ url_for('home') }}">
+<form class="box" action="{{url_for('home')}}" id="userinfo">
     <div class="field">
         <label class="label">Username</label>
         <div class="control has-icons-left has-icons-right">
@@ -32,7 +32,7 @@
     </div>
     <div class="field block">
         <div class="control">
-            <button class="button is-light">Log In!</button>
+            <button type="submit" class="button is-light">Log In!</button>
         </div>
     </div>
 </form>

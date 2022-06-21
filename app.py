@@ -8,12 +8,6 @@ import data
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 
-# login_manager = LoginManager()
-# login_manager.init_app(app)
-
-# @login_manager.user_loader
-# def load_user(user_id):
-#     return User.get(user_id)
 
 Users = data.get_users()
 
@@ -25,13 +19,16 @@ def verify_password(username, password):
 
 @app.route("/")
 def landing():
-    return render_template('landing.html', title = "Landing Page")
+    return render_template('landing.html', title="Landing Page")
+
 
 @app.route("/home")
 @auth.login_required
 def home():
+
     pets = data.get_pets()
-    return render_template('home.html', title= "Home", pets=pets, user=auth.current_user())
+    return render_template('home.html', title="Home", pets=pets, user=auth.current_user())
+
 
 @app.route("/login")
 def login():
