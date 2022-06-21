@@ -4,3 +4,7 @@
 .block:not(:last-child) {
     margin-bottom: 1.5rem;
   }
+
+.box {
+    margin: 10em 45em auto 45em;
+}
