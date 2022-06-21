@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'landing.css')}}">
+</head>
+
+
+
+<div class="box">
+    <img src="{{url_for('static', filename = 'PetForoLogo.png')}}" width="25%">
+
+    <h1>Welcome to PetForo!</h1>
+    <h2>
+        PetForo is an online market to buy and sell pets. 
+        It includes features such as reporting a missing or found 
+        pet as well as domestic shipping on certain pet purchases.
+    </h2>
+    <h3>
+        Created by Landon Campbell and Kristina Trajkovski
+    </h3>
+    <br><br><br>
+    <div class="field block">
+        <h2 class="block">If You Are New to PetForo</h2>
+            <a class="button has-text-white" href="{{url_for('signup')}}" style="background-color:#ff9970;">
+                Sign Up
+            </a>
+    </div>
+    <br>
+    <div class="field block">
+        <h2 class="block">If You Are Already Registered With PetForo</h2>
+            <a class="button has-text-white" href="{{url_for('login')}}" style="background-color:rgb(177, 19, 19);">
+                Log In
+            </a>
+    </div>
+</div>
+{% endblock %}

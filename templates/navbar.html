@@ -6,14 +6,14 @@
   <title>PetForo | {{title}}</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <script src="https://kit.fontawesome.com/dccaa85f77.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{{url_for('static', filename = 'logout.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename = 'base.css')}}">
   <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
 </head>
 
 <body>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item">
+      <a class="navbar-item" href="{{url_for('home')}}">
           <img src="{{url_for('static', filename = 'PetForoCornerLogo.png')}}" padding-left="20px" style="max-height:700px; max-width:160px;">
       </a>
   
@@ -32,14 +32,35 @@
       <div class="navbar-end">
 
         <div class="navbar-item">
-         
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="email" placeholder="Search...">
+              <span class="icon is-small is-left">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+            </p>
+          </div>
         </div>
 
         <div class="navbar-item">
           <div class="buttons">
 
+            <a class="button is-white" href="{{url_for('home')}}">
+              <i class="fas fa-home" style="padding-right:5px;"></i>
+              Home
+            </a>
+
+            <a class="button is-light" href="{{url_for('profile', user_id=user)}}">
+              <i class="fa-solid fa-circle-user" style="padding-right:5px;"></i>
+              Profile
+            </a>
+
             <a class="button has-text-white" href="{{url_for('login')}}" style="background-color:rgb(177, 19, 19);">
-              Log in
+              Log In
+            </a>
+
+            <a class="button has-text-white" href="{{url_for('signup')}}" style="background-color:#ff9970;">
+                Sign Up
             </a>
 
           </div>
@@ -49,16 +70,10 @@
     </div>
   </nav>
 
-    <div class="logout columns">
-        <h1 class="logout-message column">
-            You Have Been Logged Out!
-        </h1>
-    </div>
+    {% block content %}
+
+    {% endblock %}
+
 
 </body>
 </html>
-
-
-<div>
-
-</div>
