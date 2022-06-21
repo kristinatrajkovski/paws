@@ -44,7 +44,8 @@ def signup():
 @app.route("/profile/<string:user_id>")
 @auth.login_required
 def profile(user_id):
-    return render_template('profile.html', title="Profile", user=auth.current_user())
+    user = data.get_user(user_id)
+    return render_template('profile.html', title="Profile", user=user)
 
 @app.route("/missing")
 @auth.login_required

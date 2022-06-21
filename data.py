@@ -44,6 +44,11 @@ def get_users():
     return query("""
                 SELECT * FROM Users
     """)
+
+def get_user(user_id):
+    return query("""
+                SELECT * FROM Users
+                WHERE [Username] = ?""", user_id)
 # Users = {
 #     "Kristina": generate_password_hash("HelloWorld,01"),
 #     "Landon": generate_password_hash("HelloWorld,01")

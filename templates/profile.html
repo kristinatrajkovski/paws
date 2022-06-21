@@ -9,21 +9,23 @@
 
   <div class="split left">
       <div class="centered content is-medium">
-        <h1>{{ user }}</h1> <br><br>
-        <p>Email <p>
-        <form>
-          <textarea class="textarea" placeholder='' rows=1></textarea>
+        <h1>{{ user[0]['Username'] }}</h1> <br><br>
+        <p>Email<p>
+        <div class="control block">
+          <input class="input block" type="text" placeholder="{{user[0]['email']}}" disabled>
+        </div>
         <p>Location<p>
-            <textarea class="textarea" placeholder='' rows=1></textarea>
-          <p>Phone Number<p>
-                <textarea class="textarea" placeholder='' rows=1></textarea>
-              </form>
-              <br>
-              <div>
-                  <a class="button is-danger">
-                    Submit Changes
-                  </a>
-                </div>
+        <div class="control block">
+          <input class="input block" type="text" placeholder="{{user[0]['Location']}}" disabled>
+        </div>
+        <p>Phone Number<p>
+        <div class="control block">
+          <input class="input block" type="text" placeholder="{{user[0]['PhoneNumber']}}" disabled>
+        </div>
+        <br>
+        <a class="button is-danger">
+          Submit Changes
+        </a>
       </div>
   </div>
 
